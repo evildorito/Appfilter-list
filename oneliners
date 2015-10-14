@@ -1,0 +1,9 @@
+##############################
+####Some handy one liners ####
+##############################
+
+##############################
+#Create a tagged file with <item> </item> at the start and end of a file 
+#good for creating the icon_pack.xml file
+ 
+ls -a | sed -r 's/^/<item>/;s/.{4}$//;s/$/<\/item>/' > output.txt
