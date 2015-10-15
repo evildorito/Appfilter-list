@@ -7,3 +7,9 @@
 #good for creating the icon_pack.xml file
  
 ls -a | sed -r 's/^/<item>/;s/.{4}$//;s/$/<\/item>/' > output.txt
+
+##############################
+#Convert svg's to a smaller size
+
+for i in *; do rsvg-convert $i -w 48 -h 48 -f svg -o `echo $i | sed -e 's/svg$/new.svg/'`; done
+
